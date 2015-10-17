@@ -3,7 +3,7 @@ ruby '2.2.3'
 
 group :web, :feeder, :streamer do
   gem 'redis', '~> 3.0.7'
-  gem 'hiredis', '~> 0.5.2'
+  gem 'hiredis', '~> 0.6.0'
   gem 'oj', '~> 2.9.9'
 end
 
