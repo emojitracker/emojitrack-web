@@ -22,6 +22,9 @@ html data-stream-server="#{STREAM_SERVER}"
     script src="/vendor/jquery-timeago/jquery.timeago.js" type='text/javascript'
     script src="/vendor/jquery-timeago/locales/jquery.timeago.en-short.js" type='text/javascript'
 
+    /polyfill eventsource for IE support
+    script src="/vendor/event-source-polyfill/eventsource.min.js" type='text/javascript'
+
     /actual application stuff here
     link href='/assets/main.css' rel='stylesheet'
     script src='/application.js'

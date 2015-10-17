@@ -11,3 +11,6 @@ public/vendor/jquery-timeago/vendor
 public/vendor/jquery-timeago/test
 public/vendor/jquery-timeago/locales/*
 !public/vendor/jquery-timeago/locales/jquery.timeago.en-short.js
+
+#ignore some crap from event-source-polyfill
+public/vendor/event-source-polyfill/php
