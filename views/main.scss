@@ -232,28 +232,31 @@ a:hover .icon-twitter {
     padding-right: 0px;
   }
 }
-// iphone portrait
+
+// iphone 3-5 portrait
 @media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 568px)
+  and (device-width: 320px)
+  and (min-device-height: 480px)
+  and (max-device-height: 568px)
   and (orientation: portrait) {
     .emoji_char {
       width: 70px !important;
     }
 }
-// iphone 5 landscape √
+
+// iphone 5 landscape
 @media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 568px)
+  and (device-width: 320px)
+  and (device-height: 568px)
   and (orientation: landscape) {
     .emoji_char {
       width: 71px !important;
     }
 }
-// iphone 3-4s landscape √
+// iphone 3-4 landscape
 @media only screen
-  and (min-device-width: 320px)
-  and (max-device-width: 480px)
+  and (device-width: 320px)
+  and (device-height: 480px)
   and (orientation: landscape) {
     .emoji_char {
       width: 70px !important;
@@ -261,8 +264,8 @@ a:hover .icon-twitter {
 }
 // ipad portrait √
 @media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
+  and (device-width: 768px)
+  and (device-height: 1024px)
   and (orientation: portrait) {
     .emoji_char {
       width: 67px !important;
@@ -270,8 +273,8 @@ a:hover .icon-twitter {
 }
 // ipad landscape √
 @media only screen
-  and (min-device-width: 768px)
-  and (max-device-width: 1024px)
+  and (device-width: 768px)
+  and (device-height: 1024px)
   and (orientation: landscape) {
     .emoji_char {
       width: 76px !important;
