@@ -77,7 +77,7 @@ html data-stream-server="#{STREAM_SERVER}"
       p
         i
           | &nbsp;&nbsp;want to help keep emojitracker running?&nbsp;
-          a#donatefooterlink data-ct-checkout="emojitracker.emojitracker-donate-button" href="#footer"
+          a#donatefooterlink href="https://cash.me/$mroth"
             | donate today! :moneybag:
       br
       br
@@ -106,7 +106,7 @@ html data-stream-server="#{STREAM_SERVER}"
         h4 want to help out?
         p
           | you can donate to help me pay the server and bandwidth costs. <em>xoxo!</em>
-          button.btn.btn-lg.btn-success#donatebtn type="button" data-ct-checkout="emojitracker.emojitracker-donate-button"
+          a.btn.btn-lg.btn-success#donatebtn href="https://cash.me/$mroth"
             | :moneybag: Donate Now
 
         h4 help spread the word!
@@ -116,8 +116,6 @@ html data-stream-server="#{STREAM_SERVER}"
       div.modal-footer
         span#byline.emojifont-restricted built with :heart: in nyc.  this is a <a href="http://mroth.info" target="new">mroth :man:</a> project.
 
-    // stuff that can be loaded later
-    script src='//open.tilt.com/checkout.js' type='text/javascript'
 
     script#styled-tweet-template type='text/x-handlebars-template'
       li class='styled_tweet {{is_new}}'
