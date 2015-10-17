@@ -233,6 +233,42 @@ a:hover .icon-twitter {
   }
 }
 
+// iphone 6+ portrait
+@media only screen
+  and (device-width: 414px)
+  and (device-height: 736px)
+  and (orientation: portrait) {
+    .emoji_char {
+      width: 73px !important;
+    }
+}
+// iphone 6+ landscape
+@media only screen
+  and (device-width: 414px)
+  and (device-height: 736px)
+  and (orientation: landscape) {
+    .emoji_char {
+      width: 72px !important;
+    }
+}
+// iphone 6 portrait
+@media only screen
+  and (device-width: 375px)
+  and (device-height: 667px)
+  and (orientation: portrait) {
+    .emoji_char {
+      width: 83px !important;
+    }
+}
+// iphone 6 landscape
+@media only screen
+  and (device-width: 375px)
+  and (device-height: 667px)
+  and (orientation: landscape) {
+    .emoji_char {
+      width: 73px !important;
+    }
+}
 // iphone 3-5 portrait
 @media only screen
   and (device-width: 320px)
@@ -243,7 +279,6 @@ a:hover .icon-twitter {
       width: 70px !important;
     }
 }
-
 // iphone 5 landscape
 @media only screen
   and (device-width: 320px)
