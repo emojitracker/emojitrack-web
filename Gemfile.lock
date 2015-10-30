@@ -5,7 +5,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.7.0)
-    dalli (2.6.4)
+    dalli (2.7.4)
     diff-lcs (1.2.5)
     emoji_data (0.2.0)
     execjs (2.0.2)
@@ -50,7 +50,7 @@ PLATFORMS
 
 DEPENDENCIES
   coffee-script (~> 2.2.0)
-  dalli (~> 2.6.4)
+  dalli (~> 2.7.4)
   emoji_data (~> 0.2.0)
   hiredis (~> 0.6.0)
   memcachier (~> 0.0.2)

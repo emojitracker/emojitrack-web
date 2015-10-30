@@ -17,7 +17,7 @@ group :web do
   gem 'coffee-script', '~> 2.2.0'
   gem 'sass', '~> 3.2.12', :require => 'sass'
   gem 'unicorn', '~> 4.8.3'
-  gem 'dalli', '~> 2.6.4'
+  gem 'dalli', '~> 2.7.4'
   gem 'rack-cache', '~> 1.5.1'
   gem 'rack-timeout', '~> 0.3.2'
   gem 'memcachier', '~> 0.0.2'
