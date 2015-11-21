@@ -36,13 +36,13 @@
  * related to the main display grid
  ***************************************/
 .emoji_char {
-  width: 100px;
+  width: 110px;
   background-color: #eee;
   margin: 1px;
   padding: 3px;
   float: left;
   list-style-type: none;
-  padding-right: 20px;
+  padding-right: 10px;
   color: black;
   @include transition(color 0.75s linear, background-color 0.75s linear, opacity 0.75s linear);
 }
