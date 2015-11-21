@@ -56,7 +56,6 @@ class WebApp < Sinatra::Base
     cache_control :public, max_age: 600  # 10 mins.
 
     @emoji_char = EmojiData.find_by_unified( params[:uid] )
-    @emoji_char_rank = REDIS.ZREVRANK('emojitrack_score', @emoji_char.unified).to_i + 1
     slim :details
   end
 

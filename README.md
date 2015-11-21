@@ -24,14 +24,14 @@ As well as some general purpose libraries:
  - **[cssquirt](//github.com/mroth/cssquirt)** _Embeds images (or directories of images) directly into CSS via the Data URI scheme_
  - **[sse-bench](//github.com/mroth/sse-bench)** _benchmarks Server-Sent Events endpoints_
 
+---
 ## emojitrack-web
-This is the main web application for the emojitracker frontend and APIs.  
-
-This used to contain everything, but things are moving out to other repos.
+This is the main web application for the Emojitracker frontend and REST API.
 
 ### Development Setup
-#### Full stack
- 1. Make sure you have Ruby 2.1.x installed (preferably managed with RVM or rbenv so that the `.ruby-version` for this repository will be picked up).
+
+#### Frontend + REST API
+ 1. Make sure you have Ruby 2.2.x installed and `gem install bundler`.
  2. Get the repository and basic dependencies going:
 
         git clone mroth/emojitrack
@@ -39,13 +39,10 @@ This used to contain everything, but things are moving out to other repos.
         bundle install --without=production
 
  3. Copy `.env-sample` to `.env` and configure required variables.
- 4. Make sure you have Redis installed and running.  The rules in `lib/config.rb` currently dictate the order a redis server instance is looked for.
+ 4. Make sure you have Redis installed and running.  The rules in `lib/config.rb` currently dictate the order a redis server instance is looked for.  Depending on what you are doing, you may need to have the db populated from a emojitrack-feeder instance.
  5. Run all processes via `foreman start`.
 
-Be sure to note that while the processing power is fairly managable, the feeder component of emojitrack requires on its own about 2MB/s of downstream bandwith, and ~450KB/s of upstream.  You can use the `MAX_TERMS` environment variable to process less emoji chars if you don't have the bandwidth where you are.
 
 #### Frontend development only
 
-You can do work on the web component only by utilizing the hosted production redis instance.  First, follow the above steps for setting stuff up, but steps #1 and #2 only.
-
-Then, set `REDIS_URL` environment variable via `.env` to be the full URI of the production redis instance (get it from @mroth if you are a developer on this project).
+You can do work on the web frontend only by utilizing the production REST API.  Set `FRONTEND_ONLY=true` in your `.env` file, and the API routes will not be loaded and the AJAX calls will be routed to the production API instead of localhost.

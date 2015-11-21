@@ -12,10 +12,6 @@ if memcache_servers = ENV["MEMCACHIER_SERVERS"]
     entitystore: "memcached://#{memcache_servers}"
 end
 
-require "./web"
-require "./web_api"
-require "./web_admin"
-
 $stdout.sync = true
 
 # deflate output for bandwidth savings
@@ -26,6 +22,17 @@ use Rack::Deflater
 use Rack::Timeout
 Rack::Timeout.timeout = 10
 
-map('/')            { run WebApp }
-map('/api')         { run WebAPI }
-map('/admin')       { run WebAdmin }
+require "./lib/config"
+
+if is_development_frontend_only?
+  puts "Running in frontend only mode, API and Admin routes omitted"
+  require "./web"
+  map('/')            { run WebApp }
+else
+  require "./web"
+  require "./web_api"
+  require "./web_admin"
+  map('/')            { run WebApp }
+  map('/api')         { run WebAPI }
+  map('/admin')       { run WebAdmin }
+end
