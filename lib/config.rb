@@ -26,6 +26,10 @@ def is_development?
   ENV["RACK_ENV"] == 'development'
 end
 
+def is_development_frontend_only?
+  is_development? && to_boolean(ENV["FRONTEND_ONLY"])
+end
+
 # configure logging to graphite in production
 def graphite_log(metric, count)
   @hostedgraphite_apikey = ENV['HOSTEDGRAPHITE_APIKEY']
