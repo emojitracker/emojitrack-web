@@ -41,9 +41,11 @@ p = navigator.platform
 ###
 methods related to the polling UI
 ###
+@WEB_API = $('html').data('api-uri') || "/api"
+
 # grab the initial data and scores and pass along to draw the grid
 @refreshUIFromServer = (callback) ->
-  $.get('/api/rankings', (response) ->
+  $.get("#{WEB_API}/rankings", (response) ->
     drawEmojiStats(response, callback)
   , "json")
 

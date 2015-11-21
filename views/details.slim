@@ -43,7 +43,7 @@ javascript:
 coffee:
   $ ->
     $('h2').html emoji.replace_unified( $('h2').text() ) #js-emojify the h2 for shit browsers
-    $.get("/api/details/#{char_id}", (response) ->
+    $.get("#{WEB_API}/details/#{char_id}", (response) ->
       $('#rank').html "#" + response.popularity_rank
       for tweet in response.recent_tweets.reverse()
         appendTweetList tweet

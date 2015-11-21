@@ -50,7 +50,7 @@ javascript:
   // TODO: replace the above with HTML data-attributes instead of passing in this ghetto way
 coffee:
   @popDetails = (char_id, requester = undefined, requester_profile_url = undefined) ->
-    $.get("/api/details/#{char_id}", (response) ->
+    $.get("#{WEB_API}/details/#{char_id}", (response) ->
       #populate details for template
       $('#detailview h3').html "#{emoji.replace_unified(response.char)} #{response.char_details.name}"
       $('#detailview #uid tt').text response.char_details.unified
