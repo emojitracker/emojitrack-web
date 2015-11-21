@@ -47,15 +47,15 @@ class WebApp < Sinatra::Base
     slim :index
   end
 
-  get '/d/:char' do
+  get '/d/:uid' do
     cache_control :public, max_age: 60000  # 1000 mins.
-    redirect "/details/#{params[:char]}"
+    redirect "/details/#{params[:uid]}"
   end
 
-  get '/details/:char' do
+  get '/details/:uid' do
     cache_control :public, max_age: 600  # 10 mins.
 
-    @emoji_char = EmojiData.find_by_unified( params[:char] )
+    @emoji_char = EmojiData.find_by_unified( params[:uid] )
     @emoji_char_rank = REDIS.ZREVRANK('emojitrack_score', @emoji_char.unified).to_i + 1
     slim :details
   end
