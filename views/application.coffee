@@ -137,12 +137,12 @@ drawEmojiStats = (stats, callback) ->
     do (emoji_char) ->
       @score_cache[emoji_char.id] = emoji_char.score
       selector.append "
-        <a href='/details/#{emoji_char.id}' title='#{emoji_char.name}' data-id='#{emoji_char.id}'>
         <li class='emoji_char' id='#{emoji_char.id}' data-title='#{emoji_char.name}'>
-          <span class='char emojifont'>#{emoji.replace_unified(emoji_char.char)}</span>
-          <span class='score' id='score-#{emoji_char.id}'>#{emoji_char.score}</span>
-        </li>
-        </a>"
+          <a href='/details/#{emoji_char.id}' title='#{emoji_char.name}' data-id='#{emoji_char.id}'>
+            <span class='char emojifont'>#{emoji.replace_unified(emoji_char.char)}</span>
+            <span class='score' id='score-#{emoji_char.id}'>#{emoji_char.score}</span>
+          </a>
+        </li>"
   callback() if (callback)
 
 # getter for cached score_selector elements
