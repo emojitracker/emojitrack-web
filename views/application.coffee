@@ -19,7 +19,7 @@ config
 # use the 60 events per second capped rollup stream instead of raw?
 @use_capped_stream = true
 
-# send cleanup events when closing event streams for SUPER LAME servers like heroku :(
+# send cleanup events when closing event streams for non-updated servers like heroku :(
 # heroku labs:enable websockets may now resolve this!
 @force_stream_close = false
 
