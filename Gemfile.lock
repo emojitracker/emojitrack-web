@@ -14,10 +14,10 @@ GEM
     memcachier (0.0.2)
     newrelic_rpm (3.14.0.305)
     oj (2.18.5)
-    rack (1.6.4)
+    rack (1.6.13)
     rack-cache (1.5.1)
       rack (>= 0.4)
-    rack-protection (1.5.3)
+    rack-protection (1.5.5)
       rack
     rack-timeout (0.3.2)
     raindrops (0.13.0)
