@@ -24,8 +24,8 @@ config
 @force_stream_close = false
 
 # some urls
-emojistatic_img_path = 'http://emojistatic.github.io/images/32/'
-emojistatic_css_uri  = 'http://emojistatic.github.io/css-sheets/emoji-32px.min.css'
+emojistatic_img_path = 'https://emojistatic.github.io/images/32/'
+emojistatic_css_uri  = 'https://emojistatic.github.io/css-sheets/emoji-32px.min.css'
 
 
 ###
