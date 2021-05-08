@@ -1,10 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.7.3'
 
-group :web, :feeder do
-  gem 'emoji_data', '~> 0.2.0'
-end
-
 group :web do
   gem 'sinatra', '~> 1.4.6'
   gem 'slim', '~> 2.0.2'
@@ -15,6 +11,7 @@ group :web do
   gem 'rack-cache', '~> 1.5.1'
   gem 'rack-timeout', '~> 0.3.2'
   gem 'memcachier', '~> 0.0.2'
+  gem 'emoji_data', '~> 0.2.0'
 end
 
 group :production do

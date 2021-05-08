@@ -69,11 +69,12 @@ class WebApp < Sinatra::Base
     scss :main
   end
 
+  # redirect unicode emoji path to the details for the entry.
   # regex match for how sinatra sees unicode emoji chars in routing
   # humanized regex: block of 'percent sign followed by two word chars, exactly four in a row'
   # either exactly one or two of the above in a row (to get doublebyte)
   get %r{\A/((?:(?:\%\w{2}){4}){1,2})\z} do |char|
-    cache_control :public, max_age: 6000  # 100 mins.
+    cache_control :public, max_age: 600  # 10 mins.
     unified_id = EmojiData.char_to_unified(char)
     redirect "/details/#{unified_id}"
   end
