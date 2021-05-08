@@ -22,7 +22,6 @@ use Rack::Deflater
 use Rack::Timeout
 Rack::Timeout.timeout = 10
 
-require "./lib/config"
 require "./web"
 require "./web_api"
 require "./web_admin"
