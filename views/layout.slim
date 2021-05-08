@@ -58,11 +58,6 @@ html data-stream-server="#{STREAM_SERVER}" data-api-uri="#{API_SERVER}"
     div.container.hide#footer
       p#footline
         | :dizzy:<a href="http://twitter.com/emojitracker">emojitracker</a> is brought to you with :heart: by :man:<a href="http://twitter.com/mroth">mroth</a> &mdash; <a href="#aboutview" data-toggle="modal">more info</a>
-      p
-        i
-          | &nbsp;&nbsp;want to help keep emojitracker running?&nbsp;
-          a#donatefooterlink href="https://cash.me/$mroth"
-            | donate today! :moneybag:
       br
       br
 
@@ -86,12 +81,6 @@ html data-stream-server="#{STREAM_SERVER}" data-api-uri="#{API_SERVER}"
             a href="https://github.com/mroth/emojitrack/wiki/FAQ"
               | frequently asked questions
             | &nbsp;<small>(for everyone)</small>
-
-        h4 want to help out?
-        p
-          | you can donate to help me pay the server and bandwidth costs. <em>xoxo!</em>
-          a.btn.btn-lg.btn-success#donatebtn href="https://www.patreon.com/mroth"
-            | :moneybag: Help Support
 
         h4 help spread the word!
         p
@@ -135,7 +124,5 @@ html data-stream-server="#{STREAM_SERVER}" data-api-uri="#{API_SERVER}"
         $('a.brand').html emoji.replace_colons(':dizzy:') + ' emojitracker<small class="hidden-phone">: realtime emoji use on twitter</small>'
         $('#aboutview #byline').html emoji.replace_colons( $('#aboutview #byline').html() )
         $('#footline').html emoji.replace_colons( $('#footline').html() )
-        $('#donatebtn').html emoji.replace_colons( $('#donatebtn').html() )
-        $('#donatefooterlink').html emoji.replace_colons( $('#donatefooterlink').html() )
         unhide_footer = -> $('#footer').show()
         setTimeout unhide_footer, 1000
