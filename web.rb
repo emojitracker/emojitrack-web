@@ -37,21 +37,11 @@ class WebApp < Sinatra::Base
     slim :index
   end
 
-  get '/d/:uid' do
-    cache_control :public, max_age: 60000  # 1000 mins.
-    redirect "/details/#{params[:uid]}"
-  end
-
   get '/details/:uid' do
     cache_control :public, max_age: 600  # 10 mins.
 
     @emoji_char = EmojiData.find_by_unified( params[:uid] )
     slim :details
-  end
-
-  # MOVED
-  get '/data' do
-    redirect '/api/scores', 301
   end
 
   # MOVED
