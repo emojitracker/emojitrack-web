@@ -5,7 +5,7 @@ group :web do
   gem 'sinatra', '~> 2.1.0'
   gem 'slim', '~> 2.0.2'
   gem 'coffee-script', '~> 2.2.0'
-  gem 'sass', '~> 3.2.12', :require => 'sass'
+  gem 'sass', '~> 3.7.4', :require => 'sass'
   gem 'emoji_data', '~> 0.2.0'
 
   gem 'unicorn', '~> 5.8.0'
