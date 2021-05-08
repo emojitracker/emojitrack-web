@@ -1,30 +1,19 @@
 source 'https://rubygems.org'
-ruby '2.6.3'
-
-group :web, :feeder, :streamer do
-  gem 'redis', '~> 3.0.7'
-  gem 'hiredis', '~> 0.6.0'
-  gem 'oj', '~> 2.18.5'
-end
-
-group :web, :feeder do
-  gem 'emoji_data', '~> 0.2.0'
-end
+ruby '2.7.3'
 
 group :web do
-  gem 'sinatra', '~> 1.4.6'
-  gem 'slim', '~> 2.0.2'
-  gem 'coffee-script', '~> 2.2.0'
-  gem 'sass', '~> 3.2.12', :require => 'sass'
-  gem 'unicorn', '~> 4.8.3'
-  gem 'dalli', '~> 2.7.4'
-  gem 'rack-cache', '~> 1.5.1'
-  gem 'rack-timeout', '~> 0.3.2'
-  gem 'memcachier', '~> 0.0.2'
-end
+  gem 'sinatra', '~> 2.1.0'
+  gem 'slim', '~> 4.1.0'
+  gem 'coffee-script', '~> 2.4.1'
+  gem 'sass', '~> 3.7.4', :require => 'sass'
+  gem 'emoji_data', '~> 0.2.0'
 
-group :development do
-  gem 'rspec', '~> 2.14.1'
+  gem 'unicorn', '~> 5.8.0'
+  gem 'rack','~> 2.2.3'
+  gem 'rack-cache', '~> 1.12.1'
+  gem 'rack-timeout', '~> 0.6.0'
+  gem 'dalli', '~> 2.7.4'
+  gem 'memcachier', '~> 0.0.2'
 end
 
 group :production do

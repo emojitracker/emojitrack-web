@@ -122,7 +122,7 @@ coffee:
     id_selector.find('.num').text tbody_selector.find('tr').length
 
   @refreshData = ->
-    $.get("/admin/streamers/status.json", (response) ->
+    $.get("https://api.emojitracker.com/admin/streamers/status.json", (response) ->
       renderMultiData(response)
     , "json")
 

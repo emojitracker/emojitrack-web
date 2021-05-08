@@ -4,17 +4,11 @@ require 'coffee-script'
 require 'sass'
 require 'dalli'
 require 'rack-cache'
-require 'oj'
 require 'emoji_data'
 
 require_relative 'lib/config'
-require_relative 'web_benchmark'
-require_relative 'web_kiosk'
-
 
 class WebApp < Sinatra::Base
-  use WebBenchmarkApp
-  use WebKioskApp
 
   configure :production, :staging do
     require 'newrelic_rpm'
@@ -34,22 +28,13 @@ class WebApp < Sinatra::Base
   end
 
   set :public_folder, 'public'
-  set :static_cache_control, [:public, max_age: 60000] # 1000 mins.
+  set :static_cache_control, [:public, max_age: 6000] # 100 mins.
 
   get '/' do
     cache_control :public, max_age: 600  # 10 mins. #disable until password is gone
     # protected! if ENV['RACK_ENV'] == 'production'
 
-    # some default mode settings to be passed to JS
-    @kiosk_mode = false
-    @benchmark_mode = false
-
     slim :index
-  end
-
-  get '/d/:uid' do
-    cache_control :public, max_age: 60000  # 1000 mins.
-    redirect "/details/#{params[:uid]}"
   end
 
   get '/details/:uid' do
@@ -57,11 +42,6 @@ class WebApp < Sinatra::Base
 
     @emoji_char = EmojiData.find_by_unified( params[:uid] )
     slim :details
-  end
-
-  # MOVED
-  get '/data' do
-    redirect '/api/scores', 301
   end
 
   # MOVED
@@ -79,11 +59,12 @@ class WebApp < Sinatra::Base
     scss :main
   end
 
+  # redirect unicode emoji path to the details for the entry.
   # regex match for how sinatra sees unicode emoji chars in routing
   # humanized regex: block of 'percent sign followed by two word chars, exactly four in a row'
   # either exactly one or two of the above in a row (to get doublebyte)
-  get %r{\A/((?:(?:\%\w{2}){4}){1,2})\z} do |char|
-    cache_control :public, max_age: 6000  # 100 mins.
+  get %r{/((?:(?:\%\w{2}){4}){1,2})} do |char|
+    cache_control :public, max_age: 600  # 10 mins.
     unified_id = EmojiData.char_to_unified(char)
     redirect "/details/#{unified_id}"
   end
