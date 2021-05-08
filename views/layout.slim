@@ -29,16 +29,6 @@ html data-stream-server="#{STREAM_SERVER}" data-api-uri="#{web_api_uri}"
     link href='/assets/main.css' rel='stylesheet'
     script src='/application.js'
 
-    /benchmark stuff
-    - if @benchmark_mode
-      script src='/vendor/fpsmeter/fpsmeter.js'
-      script src='/benchmark.js'
-
-    /load kiosk mode css
-    - if @kiosk_mode
-      script src='/kiosk.js'
-      link href='/assets/kiosk.css' rel='stylesheet'
-
     javascript:
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -59,12 +49,6 @@ html data-stream-server="#{STREAM_SERVER}" data-api-uri="#{web_api_uri}"
             ul.dropdown-menu
               li
                 a href="#aboutview" data-toggle="modal" About EmojiTracker
-              - if is_development?
-                li.divider
-                li
-                  a href="/subscribe/admin" Admin: Stream Pool
-                li
-                  a href="/benchmark" Admin: FPS Benchmark
         / a.twitter-share-button.pull-right.visible-desktop href="https://twitter.com/share" data-lang="en" data-count="none" data-related="rocketws,mroth" data-dnt="true" data-text="emojitracker: visualizing realtime emoji use on twitter" data-url="http://www.emojitracker.com/" Tweet
         / a.twitter-follow-button.pull-right.visible-desktop href="https://twitter.com/emojitracker" data-show-count="false" data-dnt="true" Follow @emojitracker
 

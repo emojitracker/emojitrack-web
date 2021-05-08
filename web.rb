@@ -8,13 +8,8 @@ require 'oj'
 require 'emoji_data'
 
 require_relative 'lib/config'
-require_relative 'web_benchmark'
-require_relative 'web_kiosk'
-
 
 class WebApp < Sinatra::Base
-  use WebBenchmarkApp
-  use WebKioskApp
 
   configure :production, :staging do
     require 'newrelic_rpm'
@@ -39,10 +34,6 @@ class WebApp < Sinatra::Base
   get '/' do
     cache_control :public, max_age: 600  # 10 mins. #disable until password is gone
     # protected! if ENV['RACK_ENV'] == 'production'
-
-    # some default mode settings to be passed to JS
-    @kiosk_mode = false
-    @benchmark_mode = false
 
     slim :index
   end

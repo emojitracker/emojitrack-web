@@ -44,10 +44,6 @@ div#disclaimer.modal.hide.fade tabindex="-1" role="dialog" aria-labelledby="myMo
     a#okbtn.btn.btn-primary href="#" data-dismiss="modal" Proceed
     a.btn href="#" data-dismiss="modal" No thanks
 
-javascript:
-  var benchmark_mode = #{@benchmark_mode};
-  var kiosk_mode  = #{@kiosk_mode};
-  // TODO: replace the above with HTML data-attributes instead
 
 coffee:
   @popDetails = (char_id, requester = undefined, requester_profile_url = undefined) ->
@@ -63,7 +59,7 @@ coffee:
       #construct permalink url
       permalink = "http://emojitracker.com/details/#{char_id}" #document.URL + "details/#{char_id}"
 
-      #only show requester in kiosk mode
+      #only show requester in kiosk mode, leftover from emoji art and design show, no longer actively used
       if requester?
         $('#detailview #requester').html("Display requested by <strong>@#{requester}</strong>. <img width='48' height='48' src='#{requester_profile_url}'>")
         $('#detailview #requester').removeClass('hidden')
@@ -120,17 +116,16 @@ coffee:
         stopDetailStreaming()
 
       # let's go wild
-      unless benchmark_mode or kiosk_mode
-        if $.cookie("emojitracker_disclaimer") == "OK"
-          console.log "Disclaimer agreed to, starting automatically"
+      if $.cookie("emojitracker_disclaimer") == "OK"
+        console.log "Disclaimer agreed to, starting automatically"
+        startScoreStreaming()
+      else
+        $('#disclaimer').modal({ keyboard: true, backdrop: 'static' })
+        $('#okbtn').click ->
+          $.cookie("emojitracker_disclaimer", "OK", { expires: 365 })
           startScoreStreaming()
-        else
-          $('#disclaimer').modal({ keyboard: true, backdrop: 'static' })
-          $('#okbtn').click ->
-            $.cookie("emojitracker_disclaimer", "OK", { expires: 365 })
-            startScoreStreaming()
-          $('#disclaimer').keypress (event) ->
-            $('#okbtn').click() if (event.keyCode == 13)
+        $('#disclaimer').keypress (event) ->
+          $('#okbtn').click() if (event.keyCode == 13)
 
       $(window).unload ->
         stopScoreStreaming(false)
