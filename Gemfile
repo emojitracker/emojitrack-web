@@ -1,12 +1,6 @@
 source 'https://rubygems.org'
 ruby '2.7.3'
 
-group :web, :feeder, :streamer do
-  gem 'redis', '~> 3.0.7'
-  gem 'hiredis', '~> 0.6.0'
-  gem 'oj', '~> 2.18.5'
-end
-
 group :web, :feeder do
   gem 'emoji_data', '~> 0.2.0'
 end

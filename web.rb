@@ -4,7 +4,6 @@ require 'coffee-script'
 require 'sass'
 require 'dalli'
 require 'rack-cache'
-require 'oj'
 require 'emoji_data'
 
 require_relative 'lib/config'

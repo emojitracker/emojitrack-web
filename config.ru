@@ -23,16 +23,9 @@ use Rack::Timeout
 Rack::Timeout.timeout = 10
 
 require "./lib/config"
-
-if is_development_frontend_only?
-  puts "Running in frontend only mode, API and Admin routes omitted"
-  require "./web"
-  map('/')            { run WebApp }
-else
-  require "./web"
-  require "./web_api"
-  require "./web_admin"
-  map('/')            { run WebApp }
-  map('/api')         { run WebAPI }
-  map('/admin')       { run WebAdmin }
-end
+require "./web"
+require "./web_api"
+require "./web_admin"
+map('/')            { run WebApp }
+map('/api')         { run WebAPI }
+map('/admin')       { run WebAdmin }

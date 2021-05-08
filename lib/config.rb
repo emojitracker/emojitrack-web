@@ -1,4 +1,3 @@
-require 'redis'
 require 'uri'
 require 'socket'
 
@@ -10,21 +9,9 @@ end
 # verbose mode or no
 VERBOSE = to_boolean(ENV["VERBOSE"]) || false
 
-# db setup
-REDIS_URI = URI.parse(ENV["REDIS_URL"] || ENV["REDISCLOUD_URL"] || ENV["REDISTOGO_URL"] || ENV["BOXEN_REDIS_URL"] || "redis://localhost:6379")
-REDIS = Redis.new(:host => REDIS_URI.host, :port => REDIS_URI.port, :password => REDIS_URI.password, :driver => :hiredis)
-
-# api server setup
-def web_api_uri
-  # allow to be manually specified in env, which will always override
-  return ENV['WEB_API_URI'] if ENV['WEB_API_URI']
-  # otherwise, use defaults
-  return "http://www.emojitracker.com/api" if is_development_frontend_only?
-  "/api"
-end
-
-# stream server setup
-STREAM_SERVER = ENV['STREAM_SERVER'] || 'http://stream.emojitracker.com'
+# endpoint setup
+API_SERVER    = ENV['API_SERVER']    || 'https://api.emojitracker.com/v1'
+STREAM_SERVER = ENV['STREAM_SERVER'] || 'https://stream.emojitracker.com'
 
 # environment checks
 def is_production?
@@ -33,10 +20,6 @@ end
 
 def is_development?
   ENV["RACK_ENV"] == 'development'
-end
-
-def is_development_frontend_only?
-  is_development? && to_boolean(ENV["FRONTEND_ONLY"])
 end
 
 # configure logging to graphite in production

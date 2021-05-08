@@ -25,7 +25,3 @@ in touch][contact]!_ :ghost:
  3. Copy `.env-sample` to `.env` and configure required variables.
  4. Make sure you have Redis installed and running.  The rules in `lib/config.rb` currently dictate the order a redis server instance is looked for.  Depending on what you are doing, you may need to have the db populated from a emojitrack-feeder instance.
  5. Run all processes via `foreman start`.
-
-### Frontend development only
-
-You can do work on the web frontend only by utilizing the production REST API.  Set `FRONTEND_ONLY=true` in your `.env` file, and the API routes will not be loaded and the AJAX calls will be routed to the production API instead of localhost.

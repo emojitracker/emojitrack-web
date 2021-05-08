@@ -49,9 +49,9 @@ coffee:
   @popDetails = (char_id, requester = undefined, requester_profile_url = undefined) ->
     $.get("#{WEB_API}/details/#{char_id}", (response) ->
       #populate details for template
-      $('#detailview h3').html "#{emoji.replace_unified(response.char)} #{response.char_details.name}"
-      $('#detailview #uid tt').text response.char_details.unified
-      $('#detailview #shorthand code').text ":#{response.char_details.short_name}:"
+      $('#detailview h3').html "#{emoji.replace_unified(response.char)} #{response.name}"
+      $('#detailview #uid tt').text response.id
+      $('#detailview #shorthand code').text ":#{response.details.short_name}:"
       $('#detailview #rank').text "\##{response.popularity_rank}"
       $('#detailview #openbtn').prop 'href', "/details/#{char_id}"
       $('#detailview #jsonbtn').prop 'href', "/api/details/#{char_id}"
@@ -78,7 +78,7 @@ coffee:
           count: 'horizontal',
           hashtags: 'emojitracker',
           related: 'rocketws,mroth',
-          text: "#{response.char_details.name} #{response.char}, ranked \##{response.popularity_rank} out of 845"
+          text: "#{response.name} #{response.char}, ranked \##{response.popularity_rank} out of 845"
         }
       )
 
