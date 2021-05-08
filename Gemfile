@@ -23,10 +23,6 @@ group :web do
   gem 'memcachier', '~> 0.0.2'
 end
 
-group :development do
-  gem 'rspec', '~> 2.14.1'
-end
-
 group :production do
   gem 'newrelic_rpm'
 end
