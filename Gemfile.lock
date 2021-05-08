@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    coffee-script (2.2.0)
+    coffee-script (2.4.1)
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
@@ -48,7 +48,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  coffee-script (~> 2.2.0)
+  coffee-script (~> 2.4.1)
   dalli (~> 2.7.4)
   emoji_data (~> 0.2.0)
   memcachier (~> 0.0.2)
