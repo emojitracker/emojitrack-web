@@ -5,6 +5,7 @@ require 'oj'
 require 'emoji_data'
 
 class WebAPI < Sinatra::Base
+  set :protection, :except => [:json_csrf]
 
   before do
     headers("Access-Control-Allow-Origin" => "*" )

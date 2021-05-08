@@ -19,6 +19,8 @@ GEM
       rack (>= 0.4)
     rack-protection (1.5.5)
       rack
+    rack-test (0.6.3)
+      rack (>= 1.0)
     rack-timeout (0.3.2)
     raindrops (0.13.0)
     redis (3.0.7)
@@ -57,6 +59,7 @@ DEPENDENCIES
   newrelic_rpm
   oj (~> 2.18.5)
   rack-cache (~> 1.5.1)
+  rack-test (~> 0.6.3)
   rack-timeout (~> 0.3.2)
   redis (~> 3.0.7)
   rspec (~> 2.14.1)

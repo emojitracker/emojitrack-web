@@ -25,6 +25,7 @@ end
 
 group :development do
   gem 'rspec', '~> 2.14.1'
+  gem 'rack-test', '~> 0.6.3'
 end
 
 group :production do
