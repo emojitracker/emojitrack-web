@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.6.3'
+ruby '2.7.3'
 
 group :web, :feeder, :streamer do
   gem 'redis', '~> 3.0.7'
