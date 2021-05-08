@@ -63,7 +63,7 @@ class WebApp < Sinatra::Base
   # regex match for how sinatra sees unicode emoji chars in routing
   # humanized regex: block of 'percent sign followed by two word chars, exactly four in a row'
   # either exactly one or two of the above in a row (to get doublebyte)
-  get %r{\A/((?:(?:\%\w{2}){4}){1,2})\z} do |char|
+  get %r{/((?:(?:\%\w{2}){4}){1,2})} do |char|
     cache_control :public, max_age: 600  # 10 mins.
     unified_id = EmojiData.char_to_unified(char)
     redirect "/details/#{unified_id}"
