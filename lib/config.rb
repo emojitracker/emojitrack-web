@@ -1,10 +1,4 @@
-#convenience method for reading booleans from env vars
-def to_boolean(s)
-  s and !!s.match(/^(true|t|yes|y|1)$/i)
-end
 
-# verbose mode or no
-VERBOSE = to_boolean(ENV["VERBOSE"]) || false
 
 # endpoint setup
 API_SERVER    = ENV['API_SERVER']    || 'https://api.emojitracker.com/v1'
