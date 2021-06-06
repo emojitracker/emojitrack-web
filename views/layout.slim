@@ -50,14 +50,14 @@ html data-stream-server="#{STREAM_SERVER}" data-api-uri="#{API_SERVER}"
               b.caret
             ul.dropdown-menu
               li
-                a href="#aboutview" data-toggle="modal" About EmojiTracker
+                a href="#aboutview" data-toggle="modal" About Emojitracker
 
     == yield
 
     hr
     div.container.hide#footer
       p#footline
-        | :dizzy:<a href="http://twitter.com/emojitracker">emojitracker</a> is brought to you with :heart: by :man:<a href="http://twitter.com/mroth">mroth</a> &mdash; <a href="#aboutview" data-toggle="modal">more info</a>
+        | :dizzy:<a href="https://twitter.com/emojitracker">Emojitracker</a> is brought to you with :heart: by <a href="https://emojipedia.org">Emojipedia</a> &mdash; <a href="#aboutview" data-toggle="modal">more info</a>
       br
       br
 
@@ -66,28 +66,31 @@ html data-stream-server="#{STREAM_SERVER}" data-api-uri="#{API_SERVER}"
         button.close type="button" data-dismiss="modal" aria-hidden="true" &times;
         h3 about emojitracker
       div.modal-body
-        p this is an experiment in realtime tracking of all emoji used on twitter.
+        p Emojitracker is an experiment in realtime tracking of all emoji used on Twitter.
+        p Emojitracker was originally created in July 2013 by <a href="https://mroth.info">Matthew Rothenberg</a>, and is now maintained and supported by the team at <a href="https://emojipedia.org">Emojipedia</a>.
         h4 more info
         ul
           li
             a href="https://medium.com/@mroth/how-i-built-emojitracker-179cfd8238ac"
-              | "how i built emojitracker" article
-            | &nbsp;<small>(for nerds)</small>
+              | 📝 Article: How I Built Emojitracker (2013)
           li
-            a href="https://github.com/mroth/emojitrack"
-              | source code
-            | &nbsp;<small>(for even bigger nerds)</small>
+            a href="https://medium.com/@mroth/how-i-kept-building-emojitracker-c31378810136"
+              | 📝 Article: How I Kept Building Emojitracker (2015)
           li
-            a href="https://github.com/mroth/emojitrack/wiki/FAQ"
-              | frequently asked questions
-            | &nbsp;<small>(for everyone)</small>
+            a href="https://github.com/emojitracker"
+              | 💾 Source code: Emojitracker is Open Source (github.com)
+          li
+            a href="https://blog.emojipedia.org/#"
+              | 🆕 Blog post: Emojipedia 🧡 Emojitracker (2021)
 
-        h4 help spread the word!
+
+        / h4 help spread the word!
         p
           a.twitter-share-button href="https://twitter.com/share" data-lang="en" data-count="horizontal" data-related="rocketws,mroth" data-dnt="true" data-text="emojitracker: visualizing realtime emoji use on twitter" data-url="http://www.emojitracker.com/" Tweet
+          | &nbsp;
           a.twitter-follow-button href="https://twitter.com/emojitracker" data-show-count="false" data-show-screen-name="true" data-dnt="true" Follow @emojitracker
       div.modal-footer
-        span#byline.emojifont-restricted built with :heart: in NYC.  this is a <a href="http://mroth.info" target="new">mroth :man:</a> project.
+        span#byline.emojifont-restricted Emojitracker is brought to you with :heart: by <a href="https://emojipedia.org" target="new">Emojipedia</a>.
 
 
     script#styled-tweet-template type='text/x-handlebars-template'
