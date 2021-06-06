@@ -4,6 +4,8 @@ While this is shockingly still running in production, the plan is to migrate
 off this frontend to a new one rewritten from scratch to be more maintainable,
 hosted as static files and running on top of the newer [REST API][rest-api].
 
+[rest-api]: https://github.com/emojitracker/emojitrack-rest-api
+
 ## Local development
 
 A VSCode devcontainer is provided with appropriate versions of Ruby, etc.
