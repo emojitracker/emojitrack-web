@@ -338,6 +338,10 @@ initDiscoMode = () ->
         if disco_time is true
           disableDiscoMode()
 
+  $(".search").on "keyup", ->
+      $(".emoji_char a").removeClass("search_result")
+      $(".emoji_char a[title*=#{this.value.toUpperCase()}]").addClass("search_result")
+
 ###
 Configuration vars we need to set globally
 ###

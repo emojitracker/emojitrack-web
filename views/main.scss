@@ -35,6 +35,9 @@
 /***************************************
  * related to the main display grid
  ***************************************/
+input.search {
+  margin: 20px 0 12px 24px;
+}
 .emoji_char {
   width: 110px;
   background-color: #eee;
@@ -56,6 +59,11 @@
 .emoji_char:hover {
   @include box-shadow(inset 0 0 30px pink);
   @include transition(box-shadow 0s);
+}
+.emoji_char a.search_result {
+  background-color: #fff96d;
+  box-shadow: 0 0 0 2px #fff96d, 0 0 0 3px #b2bcc1;
+  border-radius: 1px;
 }
 .highlight_score_update_trans {
   color: red;
