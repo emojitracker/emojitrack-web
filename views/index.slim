@@ -18,6 +18,9 @@ div#detailview.modal.hide.fade.disable-avatars tabindex="-1" role="dialog" aria-
         code ?
       dt popularity
       dd#rank.badge.badge-info #-
+      dt meaning
+      dd#meaning
+
   div.modal-body
     h4
       a href="http://twitter.com" target="_blank"
@@ -50,6 +53,11 @@ coffee:
       $('#detailview #uid tt').text response.id
       $('#detailview #shorthand code').text ":#{response.details.short_name}:"
       $('#detailview #rank').text "\##{response.popularity_rank}"
+      if response.meaning?
+        $('#detailview #meaning').text response.meaning + ' '
+        $('#detailview #meaning').append '<a href="https://emojipedia.org/' + encodeURIComponent(response.char) + '">More</a>'
+      else
+        $('#detailview #meaning').text '¯\_(ツ)_/¯'
       $('#detailview #openbtn').prop 'href', "/details/#{char_id}"
 
       #construct permalink url

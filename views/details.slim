@@ -19,6 +19,8 @@ div.container
               code = ":#{@emoji_char.short_name}:"
             dt current popularity
             dd.badge.badge-info#rank = "..."
+            dt meaning
+            dd#meaning
 
         div
           a.twitter-share-button href="https://twitter.com/share" data-lang="en" data-count="horizontal" data-related="rocketws,mroth" data-hashtags="emojitracker" data-dnt="true" data-text="#{@emoji_char.name} #{@emoji_char.char}, ranked ##{@emoji_char_rank} out of 845" data-url="http://emojitracker.com/details/#{@emoji_char.unified}" Tweet
@@ -41,6 +43,11 @@ coffee:
     $('h2').html emoji.replace_unified( $('h2').text() ) #js-emojify the h2 for shit browsers
     $.get("#{WEB_API}/details/#{char_id}", (response) ->
       $('#rank').html "#" + response.popularity_rank
+      if response.meaning?
+        $('#meaning').text response.meaning + ' '
+        $('#meaning').append '<a href="https://emojipedia.org/' + encodeURIComponent(response.char) + '">More</a>'
+      else
+        $('#meaning').text '¯\_(ツ)_/¯'
       for tweet in response.recent_tweets.reverse()
         appendTweetList tweet
       startDetailStreaming(char_id)
