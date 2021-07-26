@@ -23,7 +23,8 @@ use Rack::Timeout, service_timeout: 10
 
 require "./web"
 require "./web_api"
-require "./web_admin"
+#require "./web_admin"
 map('/')            { run WebApp }
 map('/api')         { run WebAPI }
-map('/admin')       { run WebAdmin }
+# admin view is commented out for privacy reasons
+#map('/admin')       { run WebAdmin }
