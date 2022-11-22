@@ -12,7 +12,7 @@ group :web do
   gem 'rack','~> 2.2.3'
   gem 'rack-cache', '~> 1.12.1'
   gem 'rack-timeout', '~> 0.6.0'
-  gem 'dalli', '~> 2.7.4'
+  gem 'dalli', '~> 3.2.3'
   gem 'memcachier', '~> 0.0.2'
 end
 
