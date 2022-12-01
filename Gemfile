@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.7.3'
 
 group :web do
-  gem 'sinatra', '~> 2.1.0'
+  gem 'sinatra', '~> 2.2.3'
   gem 'slim', '~> 4.1.0'
   gem 'coffee-script', '~> 2.4.1'
   gem 'sass', '~> 3.7.4', :require => 'sass'
