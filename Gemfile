@@ -9,7 +9,7 @@ group :web do
   gem 'emoji_data', '~> 0.2.0'
 
   gem 'unicorn', '~> 5.8.0'
-  gem 'rack','~> 2.2.3'
+  gem 'rack','~> 2.2.6'
   gem 'rack-cache', '~> 1.12.1'
   gem 'rack-timeout', '~> 0.6.0'
   gem 'dalli', '~> 2.7.4'
