@@ -14,7 +14,7 @@ GEM
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     newrelic_rpm (7.0.0)
-    rack (2.2.3)
+    rack (2.2.6.3)
     rack-cache (1.12.1)
       rack (>= 0.4)
     rack-protection (2.1.0)
@@ -53,7 +53,7 @@ DEPENDENCIES
   emoji_data (~> 0.2.0)
   memcachier (~> 0.0.2)
   newrelic_rpm
-  rack (~> 2.2.3)
+  rack (~> 2.2.6)
   rack-cache (~> 1.12.1)
   rack-timeout (~> 0.6.0)
   sass (~> 3.7.4)
