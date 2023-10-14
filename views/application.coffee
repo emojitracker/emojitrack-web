@@ -11,7 +11,8 @@ config
 # only one of the below css animation techniques may be set to true
 @replace_technique = false
 @reflow_technique  = false
-@timeout_technique = true
+@timeout_technique = false
+@animationframe_technique = true
 
 # load css sheets of images instead of individual files
 @use_css_sheets = true
@@ -186,6 +187,9 @@ incrementScore = (id, incrby=1) ->
     else if timeout_technique
       container_selector.classList.add('highlight_score_update_trans')
       setTimeout -> container_selector.classList.remove('highlight_score_update_trans')
+    else if animationframe_technique
+      container_selector.classList.add('highlight_score_update_trans')
+      requestAnimationFrame -> container_selector.classList.remove('highlight_score_update_trans')
 
 ###
 detail page/view UI helpers
